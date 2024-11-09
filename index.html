@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Builder</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .form-section {
+            margin-bottom: 20px;
+        }
+
+        .form-section h2 {
+            margin-bottom: 10px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        #skillsContainer div {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .remove-btn {
+            margin-left: 10px;
+            color: red;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div>
+        <h1>Resume Builder</h1>
+        <form id="resumeForm">
+            <!-- Personal Information Section -->
+            <div class="form-section personal-info">
+                <h2>Personal Information</h2>
+                <label for="firstName">First Name*</label>
+                <input type="text" id="firstName" placeholder="John" name="firstName" required>
+
+                <label for="lastName">Last Name*</label>
+                <input type="text" id="lastName" placeholder="Doe" name="lastName" required>
+
+                <label for="email">Email*</label>
+                <input type="email" id="email" placeholder="example@example.com" name="email" required>
+            </div>
+
+            <!-- Education Section -->
+            <div class="form-section education">
+                <h2>Education</h2>
+                <label for="education">Education*</label>
+                <input type="text" id="education" placeholder="Your degree" name="education" required>
+            </div>
+
+            <!-- Work Experience Section -->
+            <div class="form-section work-experience">
+                <h2>Work Experience</h2>
+                <label for="experience">Experience*</label>
+                <textarea id="experience" name="experience" placeholder="Describe your work experience" required></textarea>
+            </div>
+
+            <!-- Skills Section -->
+            <div class="form-section skills">
+                <h2>Skills</h2>
+                <div id="skillsContainer">
+                    <input type="text" name="skills[]" placeholder="Enter a skill" required>
+                </div>
+                <button type="button" id="addSkillButton">Add Another Skill</button>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="text-center">
+                <button type="submit">Download PDF</button>
+            </div>
+        </form>
+
+        <!-- Resume Preview (Optional) -->
+        <div id="resumePreview"></div>
+    </div>
+
+    <script src="script.js">
+ 
+    </script>
+
+</body>
+</html>
